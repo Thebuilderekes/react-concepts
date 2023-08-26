@@ -1,8 +1,9 @@
-import Video from "./components/exercises/Video";
+// import Video from "./components/exercises/Video";
+import GuessNumber from "./components/exercises/GuessNumber";
 function App() {
 	return (
 		<>
-			<Video />
+			<GuessNumber />
 		</>
 	);
 }
