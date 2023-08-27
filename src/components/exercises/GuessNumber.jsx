@@ -8,9 +8,9 @@ function GuessNumber() {
 		randomNumberRef.current = Math.floor(Math.random() * 10) + 1;
 		console.log("randomRef", randomNumberRef);
 		console.log("input", input);
-		if (randomNumberRef.current == input.current.value) {
+		if (randomNumberRef.current == Number(input.current.value)) {
 			setMessage("You win!");
-		} else if (randomNumberRef.current > input.current.value) {
+		} else if (randomNumberRef.current > Number(input.current.value)) {
 			setMessage("too low");
 		} else {
 			setMessage("You high");
