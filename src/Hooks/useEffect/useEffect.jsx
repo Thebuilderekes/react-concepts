@@ -9,6 +9,10 @@ export default function TryEffect() {
 	useEffect(() => {
 		console.log("hello");
 	});
+	// this is a way to run useEfeect using a dependency array, This would run on as soon as the component is mounted
+	// useEffect(() => {
+	// 	console.log("hello");
+	// }, [counter]);
 	return (
 		<div>
 			<p>{counter}</p>
@@ -20,8 +24,8 @@ export default function TryEffect() {
 /** 
  * *
 //there is a way to run code effects when the code mounts and this is by including the [] dependency array when using useEffect.
- * * //Another way is to run code effects when the component is updated, this is done without including the dependecy array when using useEffect
- * * // The last way is to watch the state of variables in the dependency array to watch the variable state and run whenever there is a change in the state of that variable. so [counter] can be watched by useEffect in its dependecy array and run accoundingto the satte of counter.
+ * * //Another way is to run code effects when the component is updated, this is done without including the dependency array when using useEffect
+ * * // The last way is to watch the state of variables in the dependency array to watch the variable state and run whenever there is a change in the state of that variable. so [counter] can be watched by useEffect in its dependecy array and run according to the state of counter.
 
 
 
@@ -35,10 +39,10 @@ export default function TryEffect() {
   * * // useEffect(() => {
   * * //   first
   * * //  return () => {
-  * * //     second  where this is the cleanup function
+  * * //     console.log("hello cleanup")  where this is the cleanup function
  * * // }, [third])
  * 
  * 
- ** cleanup function always runs to cleanup the previous useEffect before it runs the first code in it.
+ ** cleanup function always runs to cleanup the previous useEffect before it runs the first code in it. In the case above the console.log will run before he first code will run dependency array code in 
      
 */

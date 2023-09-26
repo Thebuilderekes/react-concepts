@@ -40,3 +40,10 @@ React uses a synthetic event
 - Events signal something that happens
 
 ### Component composition
+
+### React Hooks
+
+- useState Hook
+- useRef
+- useEffect
+- useContext
