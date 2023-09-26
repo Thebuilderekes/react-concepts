@@ -1,3 +1,5 @@
+import "./dateCard.css";
+
 export default function DateCard({ month, year, day }) {
 	return (
 		<div className="card">

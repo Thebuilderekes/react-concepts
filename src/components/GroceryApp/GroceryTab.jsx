@@ -21,8 +21,8 @@ const GroceryTable = ({ groceryItems }) => {
 								day={item.date.getDate()}
 							/>
 						</td>
-						<td>{item.name}</td>
-						<td className="grocery-item__price">{item.price}</td>
+						<td className="grocery-item grocery-item__name">{item.name}</td>
+						<td className="grocery-item grocery-item__price">{item.price}</td>
 					</tr>
 				))}
 			</tbody>

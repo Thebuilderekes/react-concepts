@@ -1,0 +1,31 @@
+.card .card-body {
+	color: beige;
+	background-color: #3a3a3a;
+	font-size: 1rem;
+	padding: 0 1rem;
+	color: white;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.card .card-body .card-body__month {
+	font-size: 32px;
+}
+.card .card-body .card-body__year {
+	font-size: 24px;
+}
+.card .card-body .card-body__day {
+	font-size: 18px;
+}
+
+@media (max-width: 470px) {
+	.card .card-body .card-body__month {
+		font-size: 24px;
+	}
+	.card .card-body .card-body__year {
+		font-size: 18px;
+	}
+	.card .card-body .card-body__day {
+		font-size: 16px;
+	}
+}

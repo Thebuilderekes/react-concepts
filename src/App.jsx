@@ -1,3 +1,4 @@
+import "../src/index.css";
 // import Video from "./components/exercises/Video";
 // import GuessNumber from "./components/exercises/GuessNumber";
 // import Form from "./components/exercises/Form";
