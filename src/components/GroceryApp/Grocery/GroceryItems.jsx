@@ -7,6 +7,7 @@ const Grocery = () => {
 		{ id: 3, date: new Date(), name: "Milk", price: 2.99 },
 	];
 
+	console.log(groceryItems);
 	return (
 		<div>
 			<GroceryTable groceryItems={groceryItems} />

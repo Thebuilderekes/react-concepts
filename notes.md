@@ -2,6 +2,22 @@
 
 React creates a virtual Dom that is used to update the real DOM in the browser. React element tree is the fake tree, it is simplistic representation of the real DOM which has a real DOM tree.
 
+
+## JSX
+
+Behind the scenes, react code like like this:
+``return React.createElement('div', {}, ( React.createElement('h2', {}, 'hello')``
+
+is now what has been simplifierds using jsx to look like this using jsx syntax 
+
+``
+return (
+<div>
+<h2>hello</h2>
+</div>
+
+)
+``
 React has access to the React API and not the DOM API.
 React uses JSX which is compiled to regular JavaScript and so that it can be understood and used by the DOM.
 
