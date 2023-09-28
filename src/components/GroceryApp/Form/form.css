@@ -12,6 +12,7 @@ form label {
 
 form input {
 	background-color: rgb(243, 241, 241);
-	margin: 10px 0;
+	margin: 10px 20px;
 	height: 30px;
+	padding: 0 20px;
 }

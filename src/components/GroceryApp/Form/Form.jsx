@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./form.css";
 
-function Form() {
+function Form({ handleAddGroceryItem, groceryItems }) {
 	const [enteredName, setEnteredName] = useState("");
 	const [enteredDate, setEnteredDate] = useState("");
 	const [enteredPrice, setEnteredPrice] = useState("");
@@ -23,14 +23,16 @@ function Form() {
 		e.preventDefault();
 		console.log("adding");
 
-		const formData = {
+		const newGroceryItem = {
+			id: Number(groceryItems.length) + 1,
 			date: new Date(enteredDate),
-			name: enteredName,
+			itemName: enteredName,
 			price: enteredPrice,
 		};
 
-		console.log(formData);
+		handleAddGroceryItem(newGroceryItem);
 
+		//reset the form inputs after submit
 		setEnteredDate("");
 		setEnteredName("");
 		setEnteredPrice("");
@@ -40,20 +42,20 @@ function Form() {
 		<form onSubmit={handleSubmit}>
 			<div>
 				<label>
-					date
+					Enter date
 					<input type="date" value={enteredDate} onChange={handleDate} />
 				</label>
 			</div>
 			<div>
 				<label>
-					name
+					Enter name
 					<input type="text" value={enteredName} onChange={handleName} />
 				</label>
 			</div>
 
 			<div>
 				<label>
-					price
+					Enter price
 					<input type="number" value={enteredPrice} onChange={handlePrice} />
 				</label>
 			</div>

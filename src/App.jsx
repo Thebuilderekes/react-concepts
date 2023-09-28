@@ -1,5 +1,5 @@
 import "../src/index.css";
-import Grocery from "./components/GroceryApp/Grocery/GroceryItems";
+import GroceryApp from "./components/GroceryApp/Grocery/GroceryApp";
 // import Video from "./components/exercises/Video";
 // import GuessNumber from "./components/exercises/GuessNumber";
 // import Form from "./components/exercises/Form";
@@ -14,7 +14,7 @@ import Grocery from "./components/GroceryApp/Grocery/GroceryItems";
 function App() {
 	return (
 		<>
-			<Grocery />
+			<GroceryApp />
 			{/* <ExpenseItem></ExpenseItem> */}
 		</>
 	);

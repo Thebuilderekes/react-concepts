@@ -1,11 +1,10 @@
 import "./grocery.css";
 import DateCard from "../DateCard/DateCard";
-import Form from "../Form/Form";
 
 const GroceryTable = ({ groceryItems }) => {
+	console.log(groceryItems);
 	return (
 		<>
-			<Form groceryItems={groceryItems} />
 			<table className="grocery-table" border="1">
 				<thead>
 					<tr>
@@ -20,11 +19,13 @@ const GroceryTable = ({ groceryItems }) => {
 							<td>
 								<DateCard
 									month={item.date.toLocaleString("en-US", { month: "long" })}
-									year={item.date.getFullYear()}
 									day={item.date.getDate()}
+									year={item.date.getFullYear()}
 								/>
 							</td>
-							<td className="grocery-item grocery-item__name">{item.name}</td>
+							<td className="grocery-item grocery-item__name">
+								{item.itemName}
+							</td>
 							<td className="grocery-item grocery-item__price">{item.price}</td>
 						</tr>
 					))}
