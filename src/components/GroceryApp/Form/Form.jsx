@@ -5,6 +5,7 @@ function Form({ handleAddGroceryItem, groceryItems }) {
 	const [enteredName, setEnteredName] = useState("");
 	const [enteredDate, setEnteredDate] = useState("");
 	const [enteredPrice, setEnteredPrice] = useState("");
+	const [error, setError] = useState(false);
 
 	function handleName(e) {
 		e.preventDefault();
@@ -23,15 +24,18 @@ function Form({ handleAddGroceryItem, groceryItems }) {
 		e.preventDefault();
 		console.log("adding");
 
-		const newGroceryItem = {
-			id: Number(groceryItems.length) + 1,
-			date: new Date(enteredDate),
-			itemName: enteredName,
-			price: enteredPrice,
-		};
+		if (!enteredDate === "" && !enteredPrice === "" && !enteredDate === "") {
+			const newGroceryItem = {
+				id: Number(groceryItems.length) + 1,
+				date: new Date(enteredDate),
+				itemName: enteredName,
+				price: enteredPrice,
+			};
 
-		handleAddGroceryItem(newGroceryItem);
-
+			handleAddGroceryItem(newGroceryItem);
+		} else {
+			setError(true);
+		}
 		//reset the form inputs after submit
 		setEnteredDate("");
 		setEnteredName("");
@@ -40,26 +44,29 @@ function Form({ handleAddGroceryItem, groceryItems }) {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<div>
-				<label>
-					Enter date
-					<input type="date" value={enteredDate} onChange={handleDate} />
-				</label>
-			</div>
-			<div>
-				<label>
-					Enter name
-					<input type="text" value={enteredName} onChange={handleName} />
-				</label>
-			</div>
+			<div className="container">
+				<div>
+					<label>
+						Enter date
+						<input type="date" value={enteredDate} onChange={handleDate} />
+					</label>
+				</div>
+				<div>
+					<label>
+						Enter name
+						<input type="text" value={enteredName} onChange={handleName} />
+					</label>
+				</div>
 
-			<div>
-				<label>
-					Enter price
-					<input type="number" value={enteredPrice} onChange={handlePrice} />
-				</label>
+				<div>
+					<label>
+						Enter price
+						<input type="number" value={enteredPrice} onChange={handlePrice} />
+					</label>
+				</div>
+				{error ? <p role="alert">Please fill all fields</p> : " "}
 			</div>
-			<button type="submit">Submit</button>
+			<button type="submit">Add item</button>
 		</form>
 	);
 }

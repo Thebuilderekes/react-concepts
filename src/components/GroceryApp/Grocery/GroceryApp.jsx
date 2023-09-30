@@ -3,11 +3,7 @@ import GroceryTable from "./GroceryTable";
 import Form from "../Form/Form";
 
 const GroceryApp = () => {
-	const [groceryItems, setGroceryItems] = useState([
-		{ id: 1, date: new Date(), itemName: "Apples", price: 1.99 },
-		{ id: 2, date: new Date(), itemName: "Bananas", price: 0.99 },
-		{ id: 3, date: new Date(), itemName: "Milk", price: 2.99 },
-	]);
+	const [groceryItems, setGroceryItems] = useState([]);
 
 	//function to add new items to the list
 	const handleAddGroceryItem = (newGroceryItem) => {

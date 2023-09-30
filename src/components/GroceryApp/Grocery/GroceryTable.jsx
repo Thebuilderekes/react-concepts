@@ -14,6 +14,7 @@ const GroceryTable = ({ groceryItems }) => {
 					</tr>
 				</thead>
 				<tbody>
+					{groceryItems.length === 0 && <span>No items added</span>}
 					{groceryItems.map((item) => (
 						<tr key={item.id}>
 							<td>

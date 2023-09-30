@@ -4,9 +4,9 @@ export default function DateCard({ month, year, day }) {
 	return (
 		<div className="card">
 			<div className="card-body">
-				<p className="card-body__month">{month}</p>
-				<p className="card-body__day">{day}</p>
-				<p className="card-body__year">{year}</p>
+				<h3 className="card-body__month">{month}</h3>
+				<h3 className="card-body__day">{day}</h3>
+				<h3 className="card-body__year">{year}</h3>
 			</div>
 		</div>
 	);
