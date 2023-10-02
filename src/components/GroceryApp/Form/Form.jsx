@@ -8,15 +8,12 @@ function Form({ handleAddGroceryItem, groceryItems }) {
 	const [error, setError] = useState(false);
 
 	function handleName(e) {
-		e.preventDefault();
 		setEnteredName(e.target.value);
 	}
 	function handleDate(e) {
-		e.preventDefault();
 		setEnteredDate(e.target.value);
 	}
 	function handlePrice(e) {
-		e.preventDefault();
 		setEnteredPrice(e.target.value);
 	}
 
@@ -24,7 +21,11 @@ function Form({ handleAddGroceryItem, groceryItems }) {
 		e.preventDefault();
 		console.log("adding");
 
-		if (!enteredDate === "" && !enteredPrice === "" && !enteredDate === "") {
+		if (
+			enteredDate.length > 0 &&
+			enteredPrice.length > 0 &&
+			enteredDate.length > 0
+		) {
 			const newGroceryItem = {
 				id: Number(groceryItems.length) + 1,
 				date: new Date(enteredDate),
@@ -48,7 +49,13 @@ function Form({ handleAddGroceryItem, groceryItems }) {
 				<div>
 					<label>
 						Enter date
-						<input type="date" value={enteredDate} onChange={handleDate} />
+						<input
+							type="date"
+							min="2021-01-01"
+							max="2023-12-31"
+							value={enteredDate}
+							onChange={handleDate}
+						/>
 					</label>
 				</div>
 				<div>

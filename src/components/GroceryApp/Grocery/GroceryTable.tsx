@@ -1,11 +1,12 @@
 import "./grocery.css";
 import DateCard from "../DateCard/DateCard";
+import React from "react";
 
 const GroceryTable = ({ groceryItems }) => {
 	console.log(groceryItems);
 	return (
 		<>
-			<table className="grocery-table" border="1">
+			<table className="grocery-table">
 				<thead>
 					<tr>
 						<th>Date</th>
@@ -14,7 +15,9 @@ const GroceryTable = ({ groceryItems }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{groceryItems.length === 0 && <span>No items added</span>}
+					{groceryItems.length === 0 && (
+						<tr className="no-item-message">No item added</tr>
+					)}
 					{groceryItems.map((item) => (
 						<tr key={item.id}>
 							<td>

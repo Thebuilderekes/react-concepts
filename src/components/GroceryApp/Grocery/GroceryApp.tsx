@@ -1,12 +1,20 @@
 import { useState } from "react";
 import GroceryTable from "./GroceryTable";
 import Form from "../Form/Form";
+import ListFilter from "../ListFilter/ListFilter";
+import React from "react";
 
-const GroceryApp = () => {
-	const [groceryItems, setGroceryItems] = useState([]);
+interface GroceryItem {
+	name: string;
+	date: Number;
+	price: Number;
+}
+
+function GroceryApp() {
+	const [groceryItems, setGroceryItems] = useState<GroceryItem[]>([]);
 
 	//function to add new items to the list
-	const handleAddGroceryItem = (newGroceryItem) => {
+	const handleAddGroceryItem = (newGroceryItem: GroceryItem) => {
 		setGroceryItems([...groceryItems, newGroceryItem]);
 	};
 
@@ -17,10 +25,10 @@ const GroceryApp = () => {
 				handleAddGroceryItem={handleAddGroceryItem}
 				groceryItems={groceryItems}
 			/>
-
+			<ListFilter />
 			<GroceryTable groceryItems={groceryItems} />
 		</div>
 	);
-};
+}
 
 export default GroceryApp;
